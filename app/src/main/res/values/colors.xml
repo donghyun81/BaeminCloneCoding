@@ -8,9 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#FFA1A1A1</color>
-    <color name="soft_gray">#EDEDED</color>
-    <color name="sky_blue">#CDFCF6</color>
-    <color name= "blue">#7DE5ED</color>
-    <color name="orange">#FF884B</color>
-    <color name="soft_orange">#FFD384</color>
+    <color name="soft_gray">#F7F6F6</color>
+    <color name="sky_blue">#F1FBFB</color>
+    <color name="blue">#9CD6D5</color>
+    <color name="orange">#EBBC7E</color>
+    <color name="soft_orange">#FCF2E5</color>
+    <color name="hard_orange">#EE8C36</color>
 </resources>

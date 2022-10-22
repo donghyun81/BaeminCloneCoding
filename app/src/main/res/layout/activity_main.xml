@@ -104,7 +104,9 @@
                                     android:id="@+id/recently_search"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:paddingTop="12dp"
                                     android:text="최근 검색어"
+                                    android:gravity="center"
                                     android:textColor="@color/black"
                                     android:textSize="24sp"
                                     android:textStyle="bold" />
@@ -114,6 +116,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_alignParentRight="true"
+                                    app:chipBackgroundColor="@color/soft_gray"
                                     android:text="전체삭제" />
                             </RelativeLayout>
 
@@ -134,7 +137,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_alignParentRight="true"
-                                        app:chipBackgroundColor="@color/skyblue"
+                                        app:chipBackgroundColor="@color/sky_blue"
                                         android:textColor="@color/blue"
                                         android:text="네네 X" />
 
@@ -142,7 +145,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_alignParentRight="true"
-                                        app:chipBackgroundColor="@color/skyblue"
+                                        app:chipBackgroundColor="@color/sky_blue"
                                         android:textColor="@color/blue"
                                         android:text="굽네치킨 X" />
 
@@ -150,7 +153,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_alignParentRight="true"
-                                        app:chipBackgroundColor="@color/skyblue"
+                                        app:chipBackgroundColor="@color/sky_blue"
                                         android:textColor="@color/blue"
                                         android:text="오븐마루 X" />
 
@@ -158,7 +161,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_alignParentRight="true"
-                                        app:chipBackgroundColor="@color/skyblue"
+                                        app:chipBackgroundColor="@color/sky_blue"
                                         android:textColor="@color/blue"
                                         android:text="코코이찌방야 X" />
 
@@ -166,7 +169,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_alignParentRight="true"
-                                        app:chipBackgroundColor="@color/skyblue"
+                                        app:chipBackgroundColor="@color/sky_blue"
                                         android:textColor="@color/blue"
                                         android:text="미분당 X" />
                                 </com.google.android.material.chip.ChipGroup>
@@ -208,21 +211,25 @@
                                 <androidx.appcompat.widget.AppCompatTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:gravity="start"
+                                    android:layout_gravity="center"
                                     android:textColor="@color/black"
                                     android:text="요즘 우리동네 인기 맛집"
-                                    android:textSize="32dp"
+                                    android:textSize="18dp"
                                     android:textStyle="bold" />
 
                                 <androidx.appcompat.widget.AppCompatImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="20dp"
+                                    android:layout_height="22dp"
                                     android:layout_margin="3dp"
+                                    android:layout_gravity="bottom"
                                     android:src="@drawable/house" />
 
                                 <androidx.appcompat.widget.AppCompatTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:drawableRight="@drawable/question_mark"
+                                    android:drawablePadding="5dp"
+                                    android:layout_gravity="center"
                                     android:text="광고"
                                     android:textSize="12dp"
                                     android:textStyle="bold" />
@@ -232,7 +239,7 @@
                                 android:id="@+id/restaurant_list"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:padding="6dp"
+                                android:padding="3dp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@id/restaurant_list_title">
@@ -245,6 +252,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginBottom="10dp"
+                                        android:padding="4dp"
                                         android:orientation="vertical">
 
                                         <androidx.appcompat.widget.AppCompatImageView
@@ -252,7 +260,7 @@
                                             android:layout_height="180dp"
                                             android:src="@drawable/restaurant_list_1" />
 
-                                        <LinearLayout
+                                        <RelativeLayout
                                             android:layout_width="180dp"
                                             android:layout_height="wrap_content">
 
@@ -261,26 +269,129 @@
                                                 android:layout_height="wrap_content"
                                                 android:ellipsize="end"
                                                 android:maxLines="1"
-                                                android:text="프랑킨숯불양념구이치킨 신림점"
+                                                android:textColor="@color/black"
+                                                android:text="엽전식당"
                                                 android:textSize="14dp"
-                                                android:textStyle="bold" />
+                                                android:textStyle="bold"
+                                                android:layout_alignParentLeft="true"
+                                                />
 
                                             <RatingBar
                                                 style="@style/Widget.AppCompat.RatingBar.Small"
+                                                android:id="@+id/star_1"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
                                                 android:layout_gravity="end"
                                                 android:numStars="1"
-                                                android:rating="1" />
+                                                android:rating="1"
+                                                android:layout_toLeftOf="@id/star_score1"
+
+                                                />
 
                                             <androidx.appcompat.widget.AppCompatTextView
-                                                android:layout_width="110dp"
+                                                android:id="@+id/star_score1"
+                                                android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
                                                 android:layout_gravity="end"
                                                 android:text="5.0"
                                                 android:textSize="14dp"
-                                                android:textStyle="bold" />
+                                                android:textStyle="bold"
+                                                android:layout_alignParentRight="true"
+                                                />
+                                        </RelativeLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal"
+                                            >
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginEnd="6dp"
+                                                android:text="배달팁" />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/black"
+                                                android:text="500원~2,000원" />
                                         </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="40dp"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/border">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/orange"
+                                                android:background="@color/soft_orange"
+                                                android:gravity="center"
+                                                android:text="쿠폰" />
+                                        </LinearLayout>
+
+                                        <com.google.android.material.chip.Chip
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            app:chipBackgroundColor="@color/soft_gray"
+                                            android:minHeight="12dp"
+                                            android:text="50분~65분"
+                                            android:textSize="12dp" />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:padding="4dp"
+                                        android:orientation="vertical">
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:layout_width="180dp"
+                                            android:layout_height="180dp"
+                                            android:src="@drawable/restaurant_list_2" />
+
+                                        <RelativeLayout
+                                            android:layout_width="180dp"
+                                            android:layout_height="wrap_content">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="110dp"
+                                                android:layout_height="wrap_content"
+                                                android:ellipsize="end"
+                                                android:maxLines="1"
+                                                android:textColor="@color/black"
+                                                android:text="직화삼겹 직구삼 영등포점"
+                                                android:textSize="14dp"
+                                                android:textStyle="bold"
+                                                android:layout_alignParentLeft="true"
+                                                />
+
+                                            <RatingBar
+                                                style="@style/Widget.AppCompat.RatingBar.Small"
+                                                android:id="@+id/star_2"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="end"
+                                                android:numStars="1"
+                                                android:rating="1"
+                                                android:layout_toLeftOf="@id/star_score2"
+
+                                                />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:id="@+id/star_score2"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="end"
+                                                android:text="4.9"
+                                                android:textSize="14dp"
+                                                android:textStyle="bold"
+                                                android:layout_alignParentRight="true"
+                                                />
+                                        </RelativeLayout>
 
                                         <LinearLayout
                                             android:layout_width="match_parent"
@@ -296,6 +407,505 @@
                                             <androidx.appcompat.widget.AppCompatTextView
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
+                                                android:textColor="@color/black"
+                                                android:text="0원~2,000원" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="80dp"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/border">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/white"
+                                                android:background="@color/hard_orange"
+                                                android:gravity="center"
+                                                android:maxLines="1"
+                                                android:text="바로사용쿠폰" />
+                                        </LinearLayout>
+
+                                        <com.google.android.material.chip.Chip
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            app:chipBackgroundColor="@color/soft_gray"
+                                            android:minHeight="12dp"
+                                            android:text="39분~54분"
+                                            android:textSize="12dp" />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:padding="4dp"
+                                        android:orientation="vertical">
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:layout_width="180dp"
+                                            android:layout_height="180dp"
+                                            android:src="@drawable/restaurant_list_3" />
+
+                                        <RelativeLayout
+                                            android:layout_width="180dp"
+                                            android:layout_height="wrap_content">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="110dp"
+                                                android:layout_height="wrap_content"
+                                                android:ellipsize="end"
+                                                android:maxLines="1"
+                                                android:textColor="@color/black"
+                                                android:text="백악커피 신대방점"
+                                                android:textSize="14dp"
+                                                android:textStyle="bold"
+                                                android:layout_alignParentLeft="true"
+                                                />
+
+                                            <RatingBar
+                                                style="@style/Widget.AppCompat.RatingBar.Small"
+                                                android:id="@+id/star_3"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="end"
+                                                android:numStars="1"
+                                                android:rating="1"
+                                                android:layout_toLeftOf="@id/star_score3"
+
+                                                />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:id="@+id/star_score3"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="end"
+                                                android:text="5.0"
+                                                android:textSize="14dp"
+                                                android:textStyle="bold"
+                                                android:layout_alignParentRight="true"
+                                                />
+                                        </RelativeLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginEnd="6dp"
+                                                android:text="배달팁" />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/black"
+                                                android:text="500원~2,200원" />
+                                        </LinearLayout>
+                                        <com.google.android.material.chip.Chip
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            app:chipBackgroundColor="@color/soft_gray"
+                                            android:minHeight="12dp"
+                                            android:text="39분~54분"
+                                            android:textSize="12dp" />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:padding="4dp"
+
+                                        android:orientation="vertical">
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:layout_width="180dp"
+                                            android:layout_height="180dp"
+                                            android:src="@drawable/restaurant_list_4" />
+
+                                        <RelativeLayout
+                                            android:layout_width="180dp"
+                                            android:layout_height="wrap_content">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="110dp"
+                                                android:layout_height="wrap_content"
+                                                android:ellipsize="end"
+                                                android:maxLines="1"
+                                                android:textColor="@color/black"
+                                                android:text="처갓집양념치킨 신대방점"
+                                                android:textSize="14dp"
+                                                android:textStyle="bold"
+                                                android:layout_alignParentLeft="true"
+                                                />
+
+                                            <RatingBar
+                                                style="@style/Widget.AppCompat.RatingBar.Small"
+                                                android:id="@+id/star_4"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="end"
+                                                android:numStars="1"
+                                                android:rating="1"
+                                                android:layout_toLeftOf="@id/star_score4"
+
+                                                />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:id="@+id/star_score4"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="end"
+                                                android:text="4.9"
+                                                android:textSize="14dp"
+                                                android:textStyle="bold"
+                                                android:layout_alignParentRight="true"
+                                                />
+                                        </RelativeLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginEnd="6dp"
+                                                android:text="배달팁" />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/black"
+                                                android:text="2,000원" />
+                                        </LinearLayout>
+
+                                        <com.google.android.material.chip.Chip
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            app:chipBackgroundColor="@color/soft_gray"
+                                            android:minHeight="12dp"
+                                            android:text="50분~65분"
+                                            android:textSize="12dp" />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:padding="4dp"
+
+                                        android:orientation="vertical">
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:layout_width="180dp"
+                                            android:layout_height="180dp"
+                                            android:src="@drawable/restaurant_list_5" />
+
+                                        <RelativeLayout
+                                            android:layout_width="180dp"
+                                            android:layout_height="wrap_content">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="110dp"
+                                                android:layout_height="wrap_content"
+                                                android:ellipsize="end"
+                                                android:maxLines="1"
+                                                android:text="한아름1인곱창"
+                                                android:textColor="@color/black"
+                                                android:textSize="14dp"
+                                                android:textStyle="bold"
+                                                android:layout_alignParentLeft="true"
+                                                />
+
+                                            <RatingBar
+                                                style="@style/Widget.AppCompat.RatingBar.Small"
+                                                android:id="@+id/star_5"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="end"
+                                                android:numStars="1"
+                                                android:rating="1"
+                                                android:layout_toLeftOf="@id/star_score5"
+
+                                                />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:id="@+id/star_score5"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="end"
+                                                android:text="4.9"
+                                                android:textSize="14dp"
+                                                android:textStyle="bold"
+                                                android:layout_alignParentRight="true"
+                                                />
+                                        </RelativeLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginEnd="6dp"
+                                                android:text="배달팁" />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/black"
+                                                android:text="1,500원" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="40dp"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/border">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/orange"
+                                                android:background="@color/soft_orange"
+                                                android:gravity="center"
+                                                android:text="쿠폰" />
+                                        </LinearLayout>
+
+                                        <com.google.android.material.chip.Chip
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            app:chipBackgroundColor="@color/soft_gray"
+                                            android:minHeight="12dp"
+                                            android:text="47분~62분"
+                                            android:textSize="12dp" />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:padding="4dp"
+
+                                        android:orientation="vertical">
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:layout_width="180dp"
+                                            android:layout_height="180dp"
+                                            android:src="@drawable/restaurant_list_6" />
+
+                                        <RelativeLayout
+                                            android:layout_width="180dp"
+                                            android:layout_height="wrap_content">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="110dp"
+                                                android:layout_height="wrap_content"
+                                                android:ellipsize="end"
+                                                android:maxLines="1"
+                                                android:textColor="@color/black"
+                                                android:text="에이치플레이스&amp;크로플"
+                                                android:textSize="14dp"
+                                                android:textStyle="bold"
+                                                android:layout_alignParentLeft="true"
+                                                />
+
+                                            <RatingBar
+                                                style="@style/Widget.AppCompat.RatingBar.Small"
+                                                android:id="@+id/star_6"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="end"
+                                                android:numStars="1"
+                                                android:rating="1"
+                                                android:layout_toLeftOf="@id/star_score6"
+
+                                                />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:id="@+id/star_score6"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="end"
+                                                android:text="5.0"
+                                                android:textSize="14dp"
+                                                android:textStyle="bold"
+                                                android:layout_alignParentRight="true"
+                                                />
+                                        </RelativeLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginEnd="6dp"
+                                                android:text="배달팁" />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/black"
+                                                android:text="0원~2,000원" />
+                                        </LinearLayout>
+
+
+                                        <com.google.android.material.chip.Chip
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            app:chipBackgroundColor="@color/soft_gray"
+                                            android:minHeight="12dp"
+                                            android:text="39분~54분"
+                                            android:textSize="12dp" />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:padding="4dp"
+
+                                        android:orientation="vertical">
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:layout_width="180dp"
+                                            android:layout_height="180dp"
+                                            android:src="@drawable/restaurant_list_7" />
+
+                                        <RelativeLayout
+                                            android:layout_width="180dp"
+                                            android:layout_height="wrap_content">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="110dp"
+                                                android:layout_height="wrap_content"
+                                                android:ellipsize="end"
+                                                android:maxLines="1"
+                                                android:textColor="@color/black"
+                                                android:text="파스토보이 동작점"
+                                                android:textSize="14dp"
+                                                android:textStyle="bold"
+                                                android:layout_alignParentLeft="true"
+                                                />
+
+                                            <RatingBar
+                                                style="@style/Widget.AppCompat.RatingBar.Small"
+                                                android:id="@+id/star_7"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="end"
+                                                android:numStars="1"
+                                                android:rating="1"
+                                                android:layout_toLeftOf="@id/star_score7"
+
+                                                />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:id="@+id/star_score7"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="end"
+                                                android:text="4.9"
+                                                android:textSize="14dp"
+                                                android:textStyle="bold"
+                                                android:layout_alignParentRight="true"
+                                                />
+                                        </RelativeLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="40dp"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/border">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/orange"
+                                                android:background="@color/soft_orange"
+                                                android:gravity="center"
+                                                android:text="쿠폰" />
+                                        </LinearLayout>
+
+                                        <com.google.android.material.chip.Chip
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            app:chipBackgroundColor="@color/soft_gray"
+                                            android:minHeight="12dp"
+                                            android:text="32분~47분"
+                                            android:textSize="12dp" />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:padding="4dp"
+
+                                        android:orientation="vertical">
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:layout_width="180dp"
+                                            android:layout_height="180dp"
+                                            android:src="@drawable/restaurant_list_8" />
+
+                                        <RelativeLayout
+                                            android:layout_width="180dp"
+                                            android:layout_height="wrap_content">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="110dp"
+                                                android:layout_height="wrap_content"
+                                                android:ellipsize="end"
+                                                android:maxLines="1"
+                                                android:textColor="@color/black"
+                                                android:text="프랑킨숯불양념그이치킨 신림점"
+                                                android:textSize="14dp"
+                                                android:textStyle="bold"
+                                                android:layout_alignParentLeft="true"
+                                                />
+
+                                            <RatingBar
+                                                style="@style/Widget.AppCompat.RatingBar.Small"
+                                                android:id="@+id/star_8"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="end"
+                                                android:numStars="1"
+                                                android:rating="1"
+                                                android:layout_toLeftOf="@id/star_score8"
+
+                                                />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:id="@+id/star_score8"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="end"
+                                                android:text="5.0"
+                                                android:textSize="14dp"
+                                                android:textStyle="bold"
+                                                android:layout_alignParentRight="true"
+                                                />
+                                        </RelativeLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginEnd="6dp"
+                                                android:text="배달팁" />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/black"
                                                 android:text="500원~2,000원" />
                                         </LinearLayout>
 
@@ -307,6 +917,8 @@
                                             <androidx.appcompat.widget.AppCompatTextView
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
+                                                android:textColor="@color/orange"
+                                                android:background="@color/soft_orange"
                                                 android:gravity="center"
                                                 android:text="쿠폰" />
                                         </LinearLayout>
@@ -314,55 +926,185 @@
                                         <com.google.android.material.chip.Chip
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            app:chipBackgroundColor="@color/soft_gray"
                                             android:minHeight="12dp"
-                                            android:text="39분~54분"
+                                            android:text="40분~55분"
                                             android:textSize="12dp" />
                                     </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:padding="4dp"
 
-                                    <androidx.appcompat.widget.AppCompatImageView
-                                        android:layout_width="180dp"
-                                        android:layout_height="180dp"
-                                        android:src="@drawable/restaurant_list_2" />
+                                        android:orientation="vertical">
 
-                                    <androidx.appcompat.widget.AppCompatImageView
-                                        android:layout_width="180dp"
-                                        android:layout_height="180dp"
-                                        android:src="@drawable/restaurant_list_3" />
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:layout_width="180dp"
+                                            android:layout_height="180dp"
+                                            android:src="@drawable/restaurant_list_9" />
 
-                                    <androidx.appcompat.widget.AppCompatImageView
-                                        android:layout_width="180dp"
-                                        android:layout_height="180dp"
-                                        android:src="@drawable/restaurant_list_4" />
+                                        <RelativeLayout
+                                            android:layout_width="180dp"
+                                            android:layout_height="wrap_content">
 
-                                    <androidx.appcompat.widget.AppCompatImageView
-                                        android:layout_width="180dp"
-                                        android:layout_height="180dp"
-                                        android:src="@drawable/restaurant_list_5" />
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="110dp"
+                                                android:layout_height="wrap_content"
+                                                android:ellipsize="end"
+                                                android:maxLines="1"
+                                                android:textColor="@color/black"
+                                                android:text="요녀석 파스타&amp;필라프 영등포점"
+                                                android:textSize="14dp"
+                                                android:textStyle="bold"
+                                                android:layout_alignParentLeft="true"
+                                                />
 
-                                    <androidx.appcompat.widget.AppCompatImageView
-                                        android:layout_width="180dp"
-                                        android:layout_height="180dp"
-                                        android:src="@drawable/restaurant_list_6" />
+                                            <RatingBar
+                                                style="@style/Widget.AppCompat.RatingBar.Small"
+                                                android:id="@+id/star_9"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="end"
+                                                android:numStars="1"
+                                                android:rating="1"
+                                                android:layout_toLeftOf="@id/star_score9"
 
-                                    <androidx.appcompat.widget.AppCompatImageView
-                                        android:layout_width="180dp"
-                                        android:layout_height="180dp"
-                                        android:src="@drawable/restaurant_list_7" />
+                                                />
 
-                                    <androidx.appcompat.widget.AppCompatImageView
-                                        android:layout_width="180dp"
-                                        android:layout_height="180dp"
-                                        android:src="@drawable/restaurant_list_8" />
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:id="@+id/star_score9"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="end"
+                                                android:text="5.0"
+                                                android:textSize="14dp"
+                                                android:textStyle="bold"
+                                                android:layout_alignParentRight="true"
+                                                />
+                                        </RelativeLayout>
 
-                                    <androidx.appcompat.widget.AppCompatImageView
-                                        android:layout_width="180dp"
-                                        android:layout_height="180dp"
-                                        android:src="@drawable/restaurant_list_9" />
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
 
-                                    <androidx.appcompat.widget.AppCompatImageView
-                                        android:layout_width="180dp"
-                                        android:layout_height="180dp"
-                                        android:src="@drawable/restaurant_list_10" />
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginEnd="6dp"
+                                                android:text="배달팁" />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/black"
+                                                android:text="0원~1,900원" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="40dp"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/border">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/orange"
+                                                android:background="@color/soft_orange"
+                                                android:gravity="center"
+                                                android:text="쿠폰" />
+                                        </LinearLayout>
+
+                                        <com.google.android.material.chip.Chip
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            app:chipBackgroundColor="@color/soft_gray"
+                                            android:minHeight="12dp"
+                                            android:text="49분~64분"
+                                            android:textSize="12dp" />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:padding="4dp"
+
+                                        android:orientation="vertical">
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:layout_width="180dp"
+                                            android:layout_height="180dp"
+                                            android:src="@drawable/restaurant_list_10" />
+
+                                        <RelativeLayout
+                                            android:layout_width="180dp"
+                                            android:layout_height="wrap_content">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="110dp"
+                                                android:layout_height="wrap_content"
+                                                android:ellipsize="end"
+                                                android:maxLines="1"
+                                                android:textColor="@color/black"
+                                                android:text="타코야끼 in 문어 영등포구점"
+                                                android:textSize="14dp"
+                                                android:textStyle="bold"
+                                                android:layout_alignParentLeft="true"
+                                                />
+
+                                            <RatingBar
+                                                style="@style/Widget.AppCompat.RatingBar.Small"
+                                                android:id="@+id/star_10"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="end"
+                                                android:numStars="1"
+                                                android:rating="1"
+                                                android:layout_toLeftOf="@id/star_score10"
+
+                                                />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:id="@+id/star_score10"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="end"
+                                                android:text="5.0"
+                                                android:textSize="14dp"
+                                                android:textStyle="bold"
+                                                android:layout_alignParentRight="true"
+                                                />
+                                        </RelativeLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginEnd="6dp"
+                                                android:text="배달팁" />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/black"
+                                                android:text="500원~3,000원" />
+                                        </LinearLayout>
+
+
+
+                                        <com.google.android.material.chip.Chip
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            app:chipBackgroundColor="@color/soft_gray"
+                                            android:minHeight="12dp"
+                                            android:text="50분~65분"
+                                            android:textSize="12dp" />
+                                    </LinearLayout>
                                 </LinearLayout>
                             </HorizontalScrollView>
 
@@ -393,6 +1135,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="bottom"
                                 android:orientation="vertical"
+                                android:paddingStart="8dp"
                                 app:layout_constraintBottom_toTopOf="@+id/ranking_card_list"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent">
@@ -401,24 +1144,33 @@
                                     android:id="@+id/rankingCard_first_text"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:layout_gravity="bottom"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="15dp"
                                     android:text="가장 많이" />
 
                                 <androidx.appcompat.widget.AppCompatTextView
                                     android:id="@+id/rankingCard_second_text"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:text="검색하고 있어요" />
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:text="검색하고 있어요"
+                                    android:textColor="@color/black"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
 
                                 <androidx.appcompat.widget.AppCompatTextView
                                     android:id="@+id/rankingCard_third_text"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:layout_gravity="bottom"
                                     android:text="10.21 21:00 기준" />
                             </LinearLayout>
 
                             <androidx.appcompat.widget.AppCompatImageView
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_height="90dp"
                                 android:src="@drawable/popularity"
                                 app:layout_constraintBottom_toTopOf="@id/ranking_card_list"
                                 app:layout_constraintRight_toRightOf="parent"
@@ -436,173 +1188,311 @@
                                 app:layout_constraintLeft_toLeftOf="parent"
                                 app:layout_constraintTop_toBottomOf="@id/ranking_card_text_layout">
 
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content">
+                                <RelativeLayout
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:paddingRight="10dp"
+                                    android:paddingBottom="20dp">
 
                                     <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/number_1"
                                         android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:src="@drawable/number_1" />
+                                        android:layout_height="24dp"
+                                        android:src="@drawable/number_1"
+                                        android:paddingStart="14dp"
+                                        android:paddingEnd="6dp"/>
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@id/number_1"
+                                        android:gravity="center"
+                                        android:textSize="15dp"
+                                        android:textColor="@color/black"
                                         android:text="타코야끼" />
 
                                     <androidx.appcompat.widget.AppCompatImageView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
+                                        android:layout_height="wrap_content"
                                         android:layout_gravity="end"
-                                        android:src="@drawable/increase" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content">
+                                        android:layout_alignParentRight="true"
+                                        android:src="@drawable/increase " />
+                                </RelativeLayout>
+                                <RelativeLayout
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:paddingRight="10dp"
+                                    android:paddingBottom="20dp">
 
                                     <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/number_2"
                                         android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:src="@drawable/number_1" />
+                                        android:layout_height="24dp"
+                                        android:src="@drawable/number_2"
+                                        android:paddingStart="14dp"
+                                        android:paddingEnd="6dp"/>
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="타코야끼" />
+                                        android:layout_toRightOf="@id/number_2"
+                                        android:gravity="center"
+                                        android:textSize="15dp"
+                                        android:textColor="@color/black"
+                                        android:text="배스킨라빈스" />
 
                                     <androidx.appcompat.widget.AppCompatImageView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
+                                        android:layout_height="wrap_content"
                                         android:layout_gravity="end"
-                                        android:src="@drawable/increase" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content">
+                                        android:layout_alignParentRight="true"
+                                        android:src="@drawable/keep" />
+                                </RelativeLayout>
+                                <RelativeLayout
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:paddingRight="10dp"
+                                    android:paddingBottom="20dp">
 
                                     <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/number_3"
                                         android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:src="@drawable/number_1" />
+                                        android:layout_height="24dp"
+                                        android:src="@drawable/number_3"
+                                        android:paddingStart="14dp"
+                                        android:paddingEnd="6dp"/>
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="타코야끼" />
+                                        android:layout_toRightOf="@id/number_3"
+                                        android:gravity="center"
+                                        android:textSize="15dp"
+                                        android:textColor="@color/black"
+                                        android:text="공차" />
 
                                     <androidx.appcompat.widget.AppCompatImageView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
+                                        android:layout_height="wrap_content"
                                         android:layout_gravity="end"
-                                        android:src="@drawable/increase" />
-                                </LinearLayout>
+                                        android:layout_alignParentRight="true"
+                                        android:src="@drawable/increase " />
+                                </RelativeLayout>
+                                <RelativeLayout
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:paddingRight="10dp"
+                                    android:paddingBottom="20dp">
 
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content">
-
-                                    <androidx.appcompat.widget.AppCompatImageView
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/number_4"
                                         android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:src="@drawable/number_1" />
+                                        android:layout_height="24dp"
+                                        android:textColor="@color/black"
+                                        android:textSize="20dp"
+                                        android:text="4"
+                                        android:paddingStart="14dp"
+                                        android:paddingEnd="6dp"/>
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="타코야끼" />
+                                        android:layout_toRightOf="@id/number_4"
+                                        android:gravity="center"
+                                        android:textSize="15dp"
+                                        android:textColor="@color/black"
+                                        android:text="설빙" />
 
                                     <androidx.appcompat.widget.AppCompatImageView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
+                                        android:layout_height="wrap_content"
                                         android:layout_gravity="end"
-                                        android:src="@drawable/increase" />
-                                </LinearLayout>
+                                        android:layout_alignParentRight="true"
+                                        android:src="@drawable/degradation " />
+                                </RelativeLayout>
+                                <RelativeLayout
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:paddingRight="10dp"
+                                    android:paddingBottom="10dp">
 
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content">
-
-                                    <androidx.appcompat.widget.AppCompatImageView
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/number_5"
                                         android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:src="@drawable/number_1" />
+                                        android:layout_height="24dp"
+                                        android:textColor="@color/black"
+                                        android:textSize="20dp"
+                                        android:text="5"
+                                        android:paddingStart="14dp"
+                                        android:paddingEnd="6dp"/>
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="타코야끼" />
+                                        android:layout_toRightOf="@id/number_5"
+                                        android:gravity="center"
+                                        android:textSize="15dp"
+                                        android:textColor="@color/black"
+                                        android:text="과일" />
 
                                     <androidx.appcompat.widget.AppCompatImageView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
+                                        android:layout_height="wrap_content"
                                         android:layout_gravity="end"
+                                        android:layout_alignParentRight="true"
                                         android:src="@drawable/increase" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
+                                </RelativeLayout>
+                                <RelativeLayout
+                                    android:layout_width="200dp"
                                     android:layout_height="wrap_content">
 
-                                    <androidx.appcompat.widget.AppCompatImageView
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/number_6"
                                         android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:src="@drawable/number_1" />
+                                        android:layout_height="24dp"
+                                        android:textColor="@color/black"
+                                        android:textSize="20dp"
+                                        android:text="6"
+                                        android:paddingStart="14dp"
+                                        android:paddingEnd="6dp"/>
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="타코야끼" />
+                                        android:layout_toRightOf="@id/number_6"
+                                        android:gravity="center"
+                                        android:textSize="15dp"
+                                        android:textColor="@color/black"
+                                        android:text="파리바게트" />
 
                                     <androidx.appcompat.widget.AppCompatImageView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
+                                        android:layout_height="wrap_content"
                                         android:layout_gravity="end"
+                                        android:layout_alignParentRight="true"
                                         android:src="@drawable/increase" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
+                                </RelativeLayout>
+                                <RelativeLayout
+                                    android:layout_width="200dp"
                                     android:layout_height="wrap_content">
 
-                                    <androidx.appcompat.widget.AppCompatImageView
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/number_7"
                                         android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:src="@drawable/number_1" />
+                                        android:layout_height="24dp"
+                                        android:textColor="@color/black"
+                                        android:textSize="20dp"
+                                        android:text="7"
+                                        android:paddingStart="14dp"
+                                        android:paddingEnd="6dp"/>
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="타코야끼" />
+                                        android:layout_toRightOf="@id/number_7"
+                                        android:gravity="center"
+                                        android:textSize="15dp"
+                                        android:textColor="@color/black"
+                                        android:text="와플" />
 
                                     <androidx.appcompat.widget.AppCompatImageView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
+                                        android:layout_height="wrap_content"
                                         android:layout_gravity="end"
-                                        android:src="@drawable/increase" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:src="@drawable/degradation " />
+                                </RelativeLayout>
+                                <RelativeLayout
+                                    android:layout_width="200dp"
                                     android:layout_height="wrap_content">
 
-                                    <androidx.appcompat.widget.AppCompatImageView
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/number_8"
                                         android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:src="@drawable/number_1" />
+                                        android:layout_height="24dp"
+                                        android:textColor="@color/black"
+                                        android:textSize="20dp"
+                                        android:text="8"
+                                        android:paddingStart="14dp"
+                                        android:paddingEnd="6dp"/>
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="타코야끼" />
+                                        android:layout_toRightOf="@id/number_8"
+                                        android:gravity="center"
+                                        android:textSize="15dp"
+                                        android:textColor="@color/black"
+                                        android:text="빙수" />
 
                                     <androidx.appcompat.widget.AppCompatImageView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
+                                        android:layout_height="wrap_content"
                                         android:layout_gravity="end"
+                                        android:layout_alignParentRight="true"
                                         android:src="@drawable/increase" />
-                                </LinearLayout>
+                                </RelativeLayout>
+                                <RelativeLayout
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/number_9"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="24dp"
+                                        android:textColor="@color/black"
+                                        android:textSize="20dp"
+                                        android:text="9"
+                                        android:paddingStart="14dp"
+                                        android:paddingEnd="6dp"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@id/number_9"
+                                        android:gravity="center"
+                                        android:textSize="15dp"
+                                        android:textColor="@color/black"
+                                        android:text="아이스크림" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+                                        android:layout_alignParentRight="true"
+                                        android:src="@drawable/increase" />
+                                </RelativeLayout>
+                                <RelativeLayout
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/number_10"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="24dp"
+                                        android:textColor="@color/black"
+                                        android:textSize="20dp"
+                                        android:text="10"
+                                        android:paddingStart="14dp"
+                                        android:paddingEnd="6dp"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@id/number_10"
+                                        android:gravity="center"
+                                        android:textSize="15dp"
+                                        android:textColor="@color/black"
+                                        android:text="컴포즈" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+                                        android:layout_alignParentRight="true"
+                                        android:src="@drawable/increase" />
+                                </RelativeLayout>
+
                             </GridLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
@@ -615,11 +1505,9 @@
                         android:background="?android:attr/listDivider" />
 
                     <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:src="@drawable/banner_2" />
-
-
                 </GridLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
